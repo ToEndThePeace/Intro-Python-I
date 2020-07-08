@@ -32,6 +32,8 @@ import calendar
 from datetime import datetime
 
 def printCal(month = datetime.now().month, year = datetime.now().year):
+  if (month > 12 or month < 1):
+    month = datetime.now().month
   print(calendar.month(theyear = year, themonth = month))
 
 printCal(*[int(x) for x in sys.argv[1:3]])
